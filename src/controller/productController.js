@@ -1,5 +1,6 @@
 const Product = require('../model/ProductModel');
 
+// get all products
 const getProducts = async (req, res, next) => {
   try {
     // find product from server req
@@ -14,8 +15,24 @@ const getProducts = async (req, res, next) => {
     next(error);
   }
 };
+// get single product
+const getSingleProduct =async (req,res,next) => {
+  try {
+    // find id from server
+    const { id } = req.params;
+    // server id use find database id 
+    const product = await Product.findOne({ _id: id });
+    // check condition
+    // if (!product) throw new Error("No product found with this id!");
+    return res.json({product});
+    
+  } catch (error) {
+    next(error);
+  }
+}
 
 
 module.exports = {
   getProducts,
+  getSingleProduct,
 };
