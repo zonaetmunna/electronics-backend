@@ -11,6 +11,16 @@ const { Schema } = mongoose;
 	casing: String,
 	psu: String,
 	cooler: String, */
+const specificationSchema = new Schema({
+	processor: String,
+	motherboard: String,
+	ram: String,
+	graphics: String,
+	storage: String,
+	casing: String,
+	psu: String,
+	cooler: String,
+});
 
 const ProductSchema = new Schema({
 
@@ -40,7 +50,7 @@ const ProductSchema = new Schema({
 		type: Number
 
 	},
-	spec: Array,
+	spec: specificationSchema,
 	
 }, { timestamp: true }
 );

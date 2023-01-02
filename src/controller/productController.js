@@ -10,13 +10,13 @@ const getProducts = async (req, res, next) => {
     // return res
     console.log(products);
     return res.json(products);
-    
+
   } catch (error) {
     next(error);
   }
 };
 // get single product
-const getSingleProduct =async (req,res,next) => {
+const getSingleProduct = async (req, res, next) => {
   try {
     // find id from server
     const { id } = req.params;
@@ -24,8 +24,8 @@ const getSingleProduct =async (req,res,next) => {
     const product = await Product.findOne({ _id: id });
     // check condition
     // if (!product) throw new Error("No product found with this id!");
-    return res.json({product});
-    
+    return res.json({ product });
+
   } catch (error) {
     next(error);
   }
