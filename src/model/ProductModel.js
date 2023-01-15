@@ -3,33 +3,12 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 
-/* processor: String,
-  motherboard: String,
-	ram: String,
-	graphics: String,
-	storage: String,
-	casing: String,
-	psu: String,
-	cooler: String, */
-const specificationSchema = new Schema({
-	processor: String,
-	motherboard: String,
-	ram: String,
-	graphics: String,
-	storage: String,
-	casing: String,
-	psu: String,
-	cooler: String,
-});
-
 const ProductSchema = new Schema({
-
 	model: {
 		type: String,
 		required: true,
 		trim: true,
 	},
-	
 	image: {
 		type: String,
 		required: true
@@ -38,23 +17,23 @@ const ProductSchema = new Schema({
 		type: String,
 		required: true
 	},
-	keyFeature: {
-		type: Array
-	},
-	price
-		: {
+	price: {
 		type: Number,
 		required: true,
 	},
 	rating: {
 		type: Number
-
 	},
-	spec: specificationSchema,
-	
+	processor: String,
+	motherboard: String,
+	ram: String,
+	graphics: String,
+	storage: String,
+	casing: String,
+	psu: String,
+	cooler: String,
+
 }, { timestamp: true }
 );
-
-console.log(ProductSchema);
 
 module.exports = mongoose.model('Product', ProductSchema);

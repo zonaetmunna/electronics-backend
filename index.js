@@ -6,7 +6,6 @@ require('dotenv').config();
 // import interal
 const db = require('./src/config/db');
 const routes = require('./src/routes/routes');
-console.log(db);
 
 
 // app and port declared
