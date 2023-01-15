@@ -30,10 +30,36 @@ const getSingleProduct = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+};
+
+// post product
+const postProduct = async (req, res, next) => {
+  try {
+    const body = req.body;
+    const product = new Product(body);
+    await product.save();
+    return res.json(product);
+  } catch (error) {
+    next(error);
+  }
+};
+
+// delete product
+const deleteProduct = async (req, res, next) => {
+  try {
+    const id = req.params._id;
+    const deleteProduct = await Product.deleteOne({ _id: id });
+    return res.json(deleteProduct);
+  } catch (error) {
+    next(error);
+  }
+  
 }
 
 
 module.exports = {
   getProducts,
   getSingleProduct,
+  postProduct,
+  deleteProduct
 };
