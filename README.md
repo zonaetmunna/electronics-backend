@@ -6,9 +6,14 @@
 
 ###### pakage install
 
+- mongoose
 - (bcrypt)
+- passport
 - passport jwt
-- jsonweb token
+- jsonwebtoken
+- multer
+- accesscontrol
+- mongoose-beautiful-unique-validation
 
 ##### database
 
