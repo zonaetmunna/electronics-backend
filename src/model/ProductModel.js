@@ -13,6 +13,9 @@ const ProductSchema = new Schema({
 		type: String,
 		required: true
 	},
+	brand: {
+		brand: String,
+	},
 	status: {
 		type: String,
 		required: true
@@ -24,14 +27,32 @@ const ProductSchema = new Schema({
 	rating: {
 		type: Number
 	},
-	processor: String,
-	motherboard: String,
-	ram: String,
-	graphics: String,
-	storage: String,
-	casing: String,
-	psu: String,
-	cooler: String,
+	spc: [
+		{
+			processor: String,
+		},
+		{
+			motherboard: String,
+		},
+		{
+			ram: String
+		},
+		{
+			graphics: String
+		},
+		{
+			storage: String
+		},
+		{
+			casing: String
+		},
+		{
+			psu: String
+		},
+		{
+			cooler: String
+		},
+	]
 
 }, { timestamp: true }
 );
