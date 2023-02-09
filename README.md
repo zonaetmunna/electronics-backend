@@ -4,6 +4,12 @@
 - cors
 - dotenv
 
+- api endpoint
+
+#### /api/products
+
+#### /api/users
+
 ###### pakage install
 
 - mongoose

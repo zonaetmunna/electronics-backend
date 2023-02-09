@@ -27,7 +27,7 @@ const ProductSchema = new Schema({
 	rating: {
 		type: Number
 	},
-	spc: [
+	spec: [
 		{
 			processor: String,
 		},
